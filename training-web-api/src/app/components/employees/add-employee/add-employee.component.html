@@ -1,0 +1,56 @@
+<div class="container">
+    <h1 class="mb-3">Add New Employee</h1>
+    <div class="row">
+        <div class="col-6">
+            <form [formGroup]="empForm" *ngIf="empForm">
+                <!-- name -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input formControlName="name" type="text" class="form-control" id="name"
+                    [ngClass]="{'is-invalid':empForm.controls['name'].invalid && empForm.controls['name'].dirty,'is-valid':empForm.controls['name'].valid}">
+                    <span class="text-danger"
+                        *ngIf="empForm.controls['name'].invalid && empForm.controls['name'].dirty">Name is
+                        required</span>
+                </div>
+                <!-- email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input  formControlName="email" type="email" class="form-control" id="email"
+                    [ngClass]="{'is-invalid':empForm.controls['email'].invalid && empForm.controls['email'].dirty,'is-valid':empForm.controls['email'].valid}">
+                    <span class="text-danger"
+                        *ngIf="empForm.controls['email'].invalid && empForm.controls['email'].dirty">email is
+                        required</span>
+                </div>
+                <!-- phone -->
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input formControlName="phone" type="number" class="form-control" id="phone"
+                    [ngClass]="{'is-invalid':empForm.controls['phone'].invalid && empForm.controls['phone'].dirty,'is-valid':empForm.controls['phone'].valid}">
+                    <span class="text-danger"
+                        *ngIf="empForm.controls['phone'].invalid && empForm.controls['phone'].dirty">phone is
+                        required</span>
+                </div>
+                <!-- salary -->
+                <div class="mb-3">
+                    <label for="salary" class="form-label">Salary</label>
+                    <input formControlName="salary" type="number" class="form-control" id="salary"
+                    [ngClass]="{'is-invalid':empForm.controls['salary'].invalid && empForm.controls['salary'].dirty,'is-valid':empForm.controls['salary'].valid}">
+                    <span class="text-danger"
+                        *ngIf="empForm.controls['salary'].invalid && empForm.controls['salary'].dirty">salary is
+                        required</span>
+                </div>
+                <!-- department -->
+                <div class="mb-3">
+                    <label for="department" class="form-label">Department</label>
+                    <input formControlName="department" type="text" class="form-control" id="department"
+                    [ngClass]="{'is-invalid':empForm.controls['department'].invalid && empForm.controls['department'].dirty,'is-valid':empForm.controls['department'].valid}">
+                    <span class="text-danger"
+                        *ngIf="empForm.controls['department'].invalid && empForm.controls['department'].dirty">department is
+                        required</span>
+                </div>
+                <button class="btn btn-primary" (click)="addNewEmployee()" [disabled]="empForm.invalid">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</div>
